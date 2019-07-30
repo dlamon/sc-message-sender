@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.99.103
+      port: 8500
+    config:
+      name: message-sender
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config
