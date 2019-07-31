@@ -1,4 +1,4 @@
-package cn.net.liaowei.sc.message.sender.binder;
+package cn.net.liaowei.sc.message.sender.source;
 
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
  * @author LiaoWei
  */
 @Component
-public interface StreamSink {
-    String INPUT = "StreamQueue";
+public interface CommonSource {
+    String OUTPUT = "commonOutput";
 
-    @Output(StreamSink.INPUT)
+    @Output(CommonSource.OUTPUT)
     MessageChannel output();
 }

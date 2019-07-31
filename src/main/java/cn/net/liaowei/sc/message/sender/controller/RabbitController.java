@@ -25,12 +25,12 @@ public class RabbitController {
     @PostMapping("/common/send")
     public void commonSend(@RequestBody CommonDTO commonDTO) {
         log.info("Common send: {}", commonDTO);
-        amqpTemplate.convertAndSend("commonQueue", commonDTO);
+        amqpTemplate.convertAndSend("commonTopic", commonDTO);
     }
 
     @PostMapping("/order/send")
     public void orderSend(@RequestBody OrderDTO orderDTO) {
         log.info("Order send: {}", orderDTO);
-        amqpTemplate.convertAndSend("orderQueue", orderDTO.getOrderType(), orderDTO);
+        amqpTemplate.convertAndSend("orderTopic", orderDTO.getOrderType(), orderDTO);
     }
 }
